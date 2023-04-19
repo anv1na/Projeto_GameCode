@@ -1,42 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:gamecode/view/tela_aulas.dart';
+import 'package:gamecode/view/tela_cadastro.dart';
+import 'package:gamecode/view/tela_menu.dart';
+import 'package:gamecode/view/tela_perfil.dart';
+import 'package:gamecode/view/tela_sobre.dart';
+import 'view/tela_esqueceuSenha.dart';
+import 'view/tela_login.dart';
+import 'view/tela_cadastro.dart';
+import 'view/tela_sobre.dart';
+import 'view/tela_menu.dart';
+import 'view/tela_perfil.dart';
+import 'view/tela_aulas.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
-  }
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'GameCode',
+    home: TelaAulas(),
+  ));
 }
