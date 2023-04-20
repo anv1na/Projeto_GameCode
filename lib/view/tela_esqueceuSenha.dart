@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gamecode/view/tela_cadastro.dart';
+import 'package:gamecode/view/tela_login.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
 import '../model/login.dart';
 
 class TelaSenha extends StatefulWidget {
@@ -16,6 +20,19 @@ class _TelaSenhaState extends State<TelaSenha> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Color.fromRGBO(207, 147, 217, 1)),
+          onPressed: () {
+            Navigator.pop(
+              context,
+              MaterialPageRoute(builder: (context) => TelaLogin()),
+            );
+          },
+        ),
+      ),
       body: Column(children: [
         Expanded(
           child: Image.asset('lib/images/logo.png', height: 1),
@@ -82,7 +99,12 @@ class _TelaSenhaState extends State<TelaSenha> {
             height: 62.0,
             child: FloatingActionButton.extended(
               onPressed: () {
-                // Respond to button press
+                QuickAlert.show(
+                  context: context,
+                  type: QuickAlertType.error,
+                  title: 'Oops...',
+                  text: 'Funcionalidade ainda não disponível.',
+                );
               },
               label: Text('Enviar',
                   style: TextStyle(
@@ -92,9 +114,7 @@ class _TelaSenhaState extends State<TelaSenha> {
               backgroundColor: Color.fromRGBO(41, 182, 246, 1),
             ),
           ),
-          SizedBox(
-            height: 8,
-          ),
+          SizedBox(height: 10),
           Container(
               child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -106,20 +126,24 @@ class _TelaSenhaState extends State<TelaSenha> {
                       fontSize: 14,
                       color: Color.fromRGBO(97, 97, 97, 1),
                       fontWeight: FontWeight.bold)),
-              SizedBox(
-                width: 5,
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TelaCadastro()),
+                  );
+                },
+                child: Text('Cadastre-se',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 14,
+                        color: Color.fromRGBO(156, 156, 156, 1),
+                        fontWeight: FontWeight.bold)),
               ),
-              Text('Cadastre-se',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 14,
-                      color: Color.fromRGBO(156, 156, 156, 1),
-                      fontWeight: FontWeight.bold)),
             ],
           )),
         ]),
-        SizedBox(height: 10),
       ]),
     );
   }

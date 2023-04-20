@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gamecode/model/escolha_ocupacao.dart';
+import 'package:gamecode/view/tela_login.dart';
+import 'package:gamecode/view/tela_menu.dart';
 import '../model/cadastro.dart';
 import 'package:quickalert/quickalert.dart';
 
@@ -18,6 +20,19 @@ class _TelaCadastroState extends State<TelaCadastro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Color.fromRGBO(207, 147, 217, 1)),
+          onPressed: () {
+            Navigator.pop(
+              context,
+              MaterialPageRoute(builder: (context) => TelaLogin()),
+            );
+          },
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -68,6 +83,16 @@ class _TelaCadastroState extends State<TelaCadastro> {
                 fontSize: 18,
                 color: Color.fromRGBO(0, 0, 0, 1),
                 fontWeight: FontWeight.normal,
+              ),
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Cadastro',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 24,
+                color: Color.fromRGBO(0, 0, 0, 1),
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 16),
@@ -263,6 +288,12 @@ class _TelaCadastroState extends State<TelaCadastro> {
                         type: QuickAlertType.success,
                         text: 'Cadastro realizado!',
                       );
+                      Future.delayed(Duration(milliseconds: 2000), () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TelaMenu()),
+                        );
+                      });
                     },
                     label: Text(
                       'Confirmar cadastro',

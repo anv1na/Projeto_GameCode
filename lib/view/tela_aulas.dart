@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_exit_app/flutter_exit_app.dart';
+import 'package:gamecode/view/tela_menu.dart';
+import 'package:gamecode/view/tela_perfil.dart';
 import 'package:gamecode/view/tela_sobre.dart';
 
 class TelaAulas extends StatefulWidget {
@@ -17,10 +20,118 @@ class _TelaAulasState extends State<TelaAulas> {
         title: const Text("Aulas de Matemática"),
         backgroundColor: const Color.fromRGBO(207, 147, 217, 1),
         elevation: 50.0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          tooltip: 'Menu',
-          onPressed: () {},
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            tooltip: 'Menu',
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.arrow_back),
+            tooltip: 'Voltar',
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(207, 147, 217, 1),
+              ),
+              child: Column(children: <Widget>[
+                Container(
+                  width: 100,
+                  height: 100,
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://img.freepik.com/vetores-premium/avatar-de-garota-feliz-foto-de-perfil-de-crianca-engracada-isolada-no-fundo-branco_176411-3188.jpg?w=300'),
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'Luiza Helena',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 20,
+                    color: const Color.fromRGBO(0, 0, 0, 1),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ]),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text(
+                'Perfil',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TelaPerfil()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.menu_book_sharp),
+              title: Text(
+                'Menu',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TelaMenu()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.star_border),
+              title: Text(
+                'Sobre',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TelaSobre()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text(
+                'Sair',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+                FlutterExitApp.exitApp(iosForceExit: true);
+              },
+            ),
+          ],
         ),
       ),
       body: Stack(
@@ -30,7 +141,7 @@ class _TelaAulasState extends State<TelaAulas> {
               padding: EdgeInsets.all(16.0),
               child: Column(children: [
                 Container(
-                  margin: EdgeInsets.only(bottom: 60),
+                  margin: EdgeInsets.only(bottom: 20),
                   height: 64,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -74,9 +185,36 @@ class _TelaAulasState extends State<TelaAulas> {
                     ],
                   ),
                 ),
+                Text(
+                  'Conteúdos',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'Selecione um conteúdo para aprender mais',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                SizedBox(height: 20),
                 Expanded(
                   child: ListView(
                     children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey.withOpacity(0.7),
+                            width: 0.7,
+                          ),
+                        ),
+                        padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom,
+                        ),
+                      ),
                       //Card Razão e Proporção
                       Card(
                         shape: RoundedRectangleBorder(
@@ -131,17 +269,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: InkWell(
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Text("Ops..."),
-                                    content: Text(
-                                        "Funcionalidade ainda não cadastrada!"),
-                                  );
-                                });
-                          },
+                          onTap: () {},
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
@@ -187,17 +315,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: InkWell(
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Text("Ops..."),
-                                    content: Text(
-                                        "Funcionalidade ainda não cadastrada!"),
-                                  );
-                                });
-                          },
+                          onTap: () {},
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
@@ -243,14 +361,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => TelaSobre(),
-                              ),
-                            );
-                          },
+                          onTap: () {},
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
@@ -296,14 +407,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => TelaSobre(),
-                              ),
-                            );
-                          },
+                          onTap: () {},
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
@@ -349,14 +453,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => TelaSobre(),
-                              ),
-                            );
-                          },
+                          onTap: () {},
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
@@ -402,14 +499,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => TelaSobre(),
-                              ),
-                            );
-                          },
+                          onTap: () {},
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
@@ -455,14 +545,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => TelaSobre(),
-                              ),
-                            );
-                          },
+                          onTap: () {},
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(

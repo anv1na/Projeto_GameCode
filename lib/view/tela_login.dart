@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gamecode/view/tela_cadastro.dart';
+import 'package:gamecode/view/tela_esqueceuSenha.dart';
+import 'package:gamecode/view/tela_menu.dart';
 import '../model/login.dart';
-import 'package:quickalert/quickalert.dart';
 
 //import 'package:google_fonts/google_fonts.dart';
 
@@ -94,26 +96,32 @@ class _TelaLoginState extends State<TelaLogin> {
         ),
         SizedBox(height: 5),
         Container(
-            width: 472,
-            alignment: Alignment.topRight,
-            child: Text('Esqueceu a senha?',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.normal,
-                    fontSize: 12,
-                    color: Color.fromRGBO(0, 0, 0, 1)))),
-        SizedBox(height: 10),
+          width: 472,
+          alignment: Alignment.topRight,
+          child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TelaSenha()),
+                );
+              },
+              child: Text('Esqueceu a senha?',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.normal,
+                      fontSize: 12,
+                      color: Color.fromRGBO(0, 0, 0, 1)))),
+        ),
         Column(children: <Widget>[
           SizedBox(
             width: 640.0,
             height: 62.0,
             child: FloatingActionButton.extended(
               onPressed: () {
-                QuickAlert.show(
-                  context: context,
-                  type: QuickAlertType.info,
-                  text: 'Login realizado!',
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TelaMenu()),
                 );
               },
               label: Text(
@@ -139,22 +147,27 @@ class _TelaLoginState extends State<TelaLogin> {
                   style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 14,
-                      color: Color.fromRGBO(97, 97, 97, 1),
                       fontWeight: FontWeight.bold)),
-              SizedBox(
-                width: 5,
-              ),
-              Text('Cadastre-se',
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TelaCadastro()),
+                  );
+                },
+                child: Text(
+                  'Cadastre-se',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 14,
                       color: Color.fromRGBO(156, 156, 156, 1),
-                      fontWeight: FontWeight.bold)),
+                      fontWeight: FontWeight.bold),
+                ),
+              )
             ],
           )),
         ]),
-        SizedBox(height: 10),
         Column(children: [
           Text('Ao entrar no app, você concorda com os nossos',
               style: TextStyle(
