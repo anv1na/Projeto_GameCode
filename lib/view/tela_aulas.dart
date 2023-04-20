@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gamecode/view/tela_sobre.dart';
 
 class TelaAulas extends StatefulWidget {
@@ -54,7 +55,7 @@ class _TelaAulasState extends State<TelaAulas> {
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 16,
-                              color: const Color.fromRGBO(0, 0, 0, 0.8),
+                              color: const Color.fromRGBO(0, 0, 0, 1),
                               fontWeight: FontWeight.normal,
                             ),
                           ),
@@ -64,7 +65,7 @@ class _TelaAulasState extends State<TelaAulas> {
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 14,
-                              color: const Color.fromRGBO(0, 0, 0, 0.8),
+                              color: const Color.fromRGBO(0, 0, 0, 1),
                               fontWeight: FontWeight.normal,
                             ),
                           ),
@@ -76,7 +77,7 @@ class _TelaAulasState extends State<TelaAulas> {
                 Expanded(
                   child: ListView(
                     children: <Widget>[
-                      //Card Acessar Aulas
+                      //Card Razão e Proporção
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -88,34 +89,34 @@ class _TelaAulasState extends State<TelaAulas> {
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
+                                colorFilter: new ColorFilter.mode(
+                                    Colors.purple.withOpacity(0.1),
+                                    BlendMode.dstATop),
                                 image: NetworkImage(
-                                    'https://static.vecteezy.com/system/resources/thumbnails/001/925/924/small_2x/study-literature-concept-free-vector.jpg'),
-                                fit: BoxFit.cover,
+                                    'https://u7.uidownload.com/vector/894/72/vector-golden-ratio-colored-template-vector-svg-ai.jpg'),
+                                fit: BoxFit.none,
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
                                   alignment: Alignment.center,
-                                  padding: EdgeInsets.symmetric(vertical: 8),
+                                  padding: EdgeInsets.symmetric(vertical: 12),
                                   decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.7),
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(8),
                                       bottomRight: Radius.circular(8),
                                     ),
                                   ),
                                   child: Text(
-                                    'Acessar Aulas',
+                                    'Razão e Proporção',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 14,
-                                      color: const Color.fromRGBO(0, 0, 0, 0.8),
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
                                       fontWeight: FontWeight.bold,
-                                      backgroundColor:
-                                          Colors.white.withOpacity(0.8),
                                     ),
                                   ),
                                 ),
@@ -124,7 +125,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           ),
                         ),
                       ),
-                      //Card acessar matérias
+                      //Card Número Inteiros
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -144,34 +145,34 @@ class _TelaAulasState extends State<TelaAulas> {
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
+                                colorFilter: new ColorFilter.mode(
+                                    Colors.purple.withOpacity(0.1),
+                                    BlendMode.dstATop),
                                 image: NetworkImage(
-                                    'https://st2.depositphotos.com/7128044/9938/v/450/depositphotos_99381360-stock-illustration-science-icons-flat-style.jpg'),
-                                fit: BoxFit.cover,
+                                    'https://us.123rf.com/450wm/peterhermesfurian/peterhermesfurian1701/peterhermesfurian170100008/68419297-n%C3%BAmeros-de-colores-flotantes-y-superpuestos-como-s%C3%ADmbolo-de-numerolog%C3%ADa-o-inundaci%C3%B3n-de-datos-diez.jpg?ver=6'),
+                                fit: BoxFit.none,
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
                                   alignment: Alignment.center,
-                                  padding: EdgeInsets.symmetric(vertical: 8),
+                                  padding: EdgeInsets.symmetric(vertical: 12),
                                   decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.7),
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(8),
                                       bottomRight: Radius.circular(8),
                                     ),
                                   ),
                                   child: Text(
-                                    'Acessar Matérias',
+                                    'Números Inteiros e Plano Cartesiano',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 14,
-                                      color: const Color.fromRGBO(0, 0, 0, 0.8),
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
                                       fontWeight: FontWeight.bold,
-                                      backgroundColor:
-                                          Colors.white.withOpacity(0.8),
                                     ),
                                   ),
                                 ),
@@ -180,7 +181,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           ),
                         ),
                       ),
-                      //Card Lição de Casa
+                      //Card Operações
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -200,34 +201,34 @@ class _TelaAulasState extends State<TelaAulas> {
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
+                                colorFilter: new ColorFilter.mode(
+                                    Colors.purple.withOpacity(0.1),
+                                    BlendMode.dstATop),
                                 image: NetworkImage(
-                                    'https://static.vecteezy.com/system/resources/thumbnails/004/938/802/small_2x/illustration-of-an-open-book-a-lamp-pencils-with-pens-and-a-cup-of-tea-learning-and-reading-concept-vector.jpg'),
-                                fit: BoxFit.cover,
+                                    'https://lh5.googleusercontent.com/qdalvfrHXTbOxmvHPvNVtct22W3LLj-C9WP4TeBJ_kCUKB8vlwOSoB9AIakIkq8ozzhlJfoY43mNpm1qtO6Fknq3S3n8EAIbCV3p0pf9OAFymeYw2UZfdkb_Oc4ugz9Q49QCTBKjjxle'),
+                                fit: BoxFit.none,
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
                                   alignment: Alignment.center,
-                                  padding: EdgeInsets.symmetric(vertical: 8),
+                                  padding: EdgeInsets.symmetric(vertical: 12),
                                   decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.7),
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(8),
                                       bottomRight: Radius.circular(8),
                                     ),
                                   ),
                                   child: Text(
-                                    'Lição de Casa',
+                                    'Operações com números racionais',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 14,
-                                      color: const Color.fromRGBO(0, 0, 0, 0.8),
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
                                       fontWeight: FontWeight.bold,
-                                      backgroundColor:
-                                          Colors.white.withOpacity(0.8),
                                     ),
                                   ),
                                 ),
@@ -236,7 +237,7 @@ class _TelaAulasState extends State<TelaAulas> {
                           ),
                         ),
                       ),
-                      //Card Sobre
+                      //Card Ângulos
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -253,33 +254,246 @@ class _TelaAulasState extends State<TelaAulas> {
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage('lib/images/logo.png'),
-                                fit: BoxFit.cover,
+                                colorFilter: new ColorFilter.mode(
+                                    Colors.purple.withOpacity(0.1),
+                                    BlendMode.dstATop),
+                                image: NetworkImage(
+                                    'https://static.vecteezy.com/system/resources/previews/000/139/901/non_2x/geometry-and-mathematics-tool-set-vector.jpg'),
+                                fit: BoxFit.none,
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
                                   alignment: Alignment.center,
-                                  padding: EdgeInsets.symmetric(vertical: 8),
+                                  padding: EdgeInsets.symmetric(vertical: 12),
                                   decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.7),
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(8),
                                       bottomRight: Radius.circular(8),
                                     ),
                                   ),
                                   child: Text(
-                                    'Sobre',
+                                    'Ângulos, Simetria e Construções Geométricas',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 12,
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //Card Regularidades
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TelaSobre(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                colorFilter: new ColorFilter.mode(
+                                    Colors.purple.withOpacity(0.1),
+                                    BlendMode.dstATop),
+                                image: NetworkImage(
+                                    'https://img.freepik.com/vetores-premium/padrao-perfeito-de-matematica-em-estilo-de-linha_111409-395.jpg'),
+                                fit: BoxFit.none,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.symmetric(vertical: 12),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(8),
+                                      bottomRight: Radius.circular(8),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'Regularidades e Padrões',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 14,
-                                      color: const Color.fromRGBO(0, 0, 0, 0.8),
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
                                       fontWeight: FontWeight.bold,
-                                      backgroundColor:
-                                          Colors.white.withOpacity(0.8),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //Card Expressões Algébricas
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TelaSobre(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                colorFilter: new ColorFilter.mode(
+                                    Colors.purple.withOpacity(0.1),
+                                    BlendMode.dstATop),
+                                image: NetworkImage(
+                                    'https://s1.static.brasilescola.uol.com.br/be/conteudo/images/polinomios-sao-expressoes-algebricas-formadas-por-monomios-577d4ba5c2781.jpg'),
+                                fit: BoxFit.none,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.symmetric(vertical: 12),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(8),
+                                      bottomRight: Radius.circular(8),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'Expressões Algébricas',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 14,
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //Card Equações
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TelaSobre(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                colorFilter: new ColorFilter.mode(
+                                    Colors.purple.withOpacity(0.1),
+                                    BlendMode.dstATop),
+                                image: NetworkImage(
+                                    'https://static.todamateria.com.br/upload/eq/ua/equacao-do-1-grau-com-uma-incognita-exercicios-og.jpg'),
+                                fit: BoxFit.none,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.symmetric(vertical: 12),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(8),
+                                      bottomRight: Radius.circular(8),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'Equações de 1º grau',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 14,
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //Sólidos geométricos
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TelaSobre(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                colorFilter: new ColorFilter.mode(
+                                    Colors.purple.withOpacity(0.1),
+                                    BlendMode.dstATop),
+                                image: NetworkImage(
+                                    'https://s3.static.brasilescola.uol.com.br/be/2022/06/formas-geometricas.jpg'),
+                                fit: BoxFit.none,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.symmetric(vertical: 12),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(8),
+                                      bottomRight: Radius.circular(8),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'Sólidos Geométricos',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 14,
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
